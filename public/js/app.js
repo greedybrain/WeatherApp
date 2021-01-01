@@ -11,10 +11,8 @@ const isLoading = () => {
 
 const handleError = (data) => (errMessage.textContent = data.error);
 
-const handleSuccess = (data) => {
-	console.log(data);
-	succMessage.textContent = `It is ${data.temperature} in ${data.location}, but it feels like ${data.feelslike}. The humidity is ${data.humidity}`;
-};
+const handleSuccess = (data) =>
+	(succMessage.textContent = `It is ${data.temperature} in ${data.location}, but it feels like ${data.feelslike}. The humidity is ${data.humidity}`);
 
 const getForecastInfo = async (location) => {
 	const url = `/weather?address=${location}`;
